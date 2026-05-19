@@ -1,4 +1,4 @@
-import {multiply, subtract, sum} from "../src";
+import {divide, multiply, subtract, sum} from "../src";
 
 describe("addition operation", () => {
   it("should return the sum of two numbers", () => {
@@ -20,8 +20,15 @@ describe("subtraction operation", () => {
 });
 
 describe("multiplication operation", () => {
-  it("should return the production of two numbers", () => {
+  it("should return the product of two numbers", () => {
     const result = multiply(5, 3);
     expect(result).toBe(15);
+  });
+});
+
+describe("division operation", () => {
+  it("should return the quotient of two numbers", () => {
+    const results = divide(10, 5);
+    expect(results).toBe(2);
   });
 });
