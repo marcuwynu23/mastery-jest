@@ -26,8 +26,8 @@ pnpm test
 
 - [ x ] Learn Jest test structure: `describe`, `test`, and `expect`
 - [ x ] Write simple unit tests for functions and return values
-- [ ] Run Jest tests locally with `pnpm test`
-- [ ] Use matchers like `toBe`, `toEqual`, `toContain`, and `toHaveLength`
+- [ x ] Run Jest tests locally with `pnpm test`
+- [ x ] Use matchers like `toBe`, `toEqual`, `toContain`, and `toHaveLength`
 
 ### Intermediate
 
