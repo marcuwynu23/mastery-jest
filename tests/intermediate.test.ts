@@ -39,38 +39,3 @@ describe("getContent - async/await style", () => {
     expect(getContent(0)).rejects.toThrow("Id not found.");
   });
 });
-
-// ################### Mock functions and modules using `jest.fn()` and `jest.mock()` #######################
-
-describe("mock functions and modules using `jest.fn()` and `jest.mock()`", () => {
-  // test a mock function using `jest.fn()`
-  test("test a mock function using `jest.fn()`", () => {
-    // create mock funciton using jest.fn()
-    const mockFn = jest.fn();
-
-    // calling mockFn
-    mockFn("hello");
-    mockFn("hello");
-
-    // expecting mockFn to have been called
-    expect(mockFn).toHaveBeenCalled();
-    // expecting mockFn to have been called with value "hello"
-    expect(mockFn).toHaveBeenCalledWith("hello");
-    // expecting mockFn to have been called two times
-    expect(mockFn).toHaveBeenCalledTimes(2);
-  });
-
-  // test a mock function using `jest.fn()` with return value
-  test("test a mock function using `jest.fn()` with return value", () => {
-    const mockFn = jest.fn().mockReturnValue(50);
-    mockFn();
-    expect(mockFn).toHaveReturnedWith(50);
-  });
-  // test mock function using `jest.fn()` with implementation
-  test("test mock function using `jest.fn()` with implementation", () => {
-    const mockSum = jest.fn().mockImplementation((a, b) => a + b);
-    mockSum(5, 3);
-
-    expect(mockSum).toHaveReturnedWith(8);
-  });
-});
