@@ -34,11 +34,12 @@ describe("mock functions and modules using `jest.fn()`", () => {
 });
 
 import {math} from "../src/mock";
+
 jest.mock("../src/mock");
 
 const mockMath = jest.mocked(math);
 
-describe("mock functions and modules using  `jest.mock()`", () => {
+describe("mock functions and modules using `jest.mock()`", () => {
   beforeEach(() => {
     mockMath.add.mockReturnValue(10);
     mockMath.multiply.mockReturnValue(20);
@@ -54,3 +55,37 @@ describe("mock functions and modules using  `jest.mock()`", () => {
   });
 });
 
+import os from "os";
+import {getSystemInfo} from "../src/mock-systeminfo";
+
+jest.mock("os");
+
+const mockOs = jest.mocked(os);
+
+describe("mock function using os build-in module", () => {
+  beforeEach(() => {
+    mockOs.platform.mockReturnValue("linux");
+    mockOs.hostname.mockReturnValue("my-machine");
+    mockOs.freemem.mockReturnValue(800000);
+  });
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test("returns mocked system info", () => {
+    const result = getSystemInfo();
+
+    expect(result.platform).toBe("linux");
+    expect(result.hostname).toBe("my-machine");
+    expect(result.freemem).toBe(800000);
+  });
+  test("calls os methods once", () => {
+    // call getSystemInfo
+    getSystemInfo();
+
+    // expect functions or fields are called once.
+    expect(mockOs.platform).toHaveBeenCalledTimes(1);
+    expect(mockOs.hostname).toHaveBeenCalledTimes(1);
+    expect(mockOs.freemem).toHaveBeenCalledTimes(1);
+  });
+});
