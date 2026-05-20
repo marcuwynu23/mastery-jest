@@ -32,16 +32,16 @@ pnpm test
 ### Intermediate
 
 - [x] Test asynchronous code with `async/await`, `resolves`, and `rejects`
-- [ ] Mock functions and modules using `jest.fn()` and `jest.mock()`
-- [ ] Use setup and teardown hooks: `beforeEach`, `afterEach`, `beforeAll`, `afterAll`
-- [ ] Organize test files and improve coverage with targeted cases
+- [x] Mock functions and modules using `jest.fn()` and `jest.mock()`
+- [x] Use setup and teardown hooks: `beforeEach`, `afterEach`, `beforeAll`, `afterAll`
+- [x] Organize test files and improve coverage with targeted cases
 
 ### Advanced
 
 - [ ] Explore spies, deep mocks, and custom matchers
 - [ ] Test Express routes or API handlers in Node.js
 - [ ] Use snapshot testing for component or object output validation
-- [ ] Configure Jest with TypeScript via `ts-jest` and custom transformer settings
+- [x] Configure Jest with TypeScript via `ts-jest` and custom transformer settings
 
 ### Mastery
 
