@@ -1,5 +1,6 @@
 import {fetchContentUsers, fetchUser, getContent} from "../src/intermediate";
 
+// ############################## Test asynchronous code with `async/await`, `resolves`, and `rejects`  ###############################
 describe("fetchUser - async/await style", () => {
   test("resolve with a user object for valid ID", async () => {
     const user = await fetchUser(1);
@@ -36,5 +37,25 @@ describe("getContent - async/await style", () => {
 
   test("throws error if id is equal to 0", async () => {
     expect(getContent(0)).rejects.toThrow("Id not found.");
+  });
+});
+
+// ################### Mock functions and modules using `jest.fn()` and `jest.mock()` #######################
+
+describe("mock functions and modules using `jest.fn()` and `jest.mock()`", () => {
+  test("test a mock function using `jest.fn()`", () => {
+    // create mock funciton using jest.fn()
+    const mockFn = jest.fn();
+
+    // calling mockFn
+    mockFn("hello");
+    mockFn("hello");
+
+    // expecting mockFn to have been called
+    expect(mockFn).toHaveBeenCalled();
+    // expecting mockFn to have been called with value "hello"
+    expect(mockFn).toHaveBeenCalledWith("hello");
+    // expecting mockFn to have been called two times
+    expect(mockFn).toHaveBeenCalledTimes(2);
   });
 });
