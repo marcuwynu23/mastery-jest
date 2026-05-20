@@ -31,7 +31,7 @@ pnpm test
 
 ### Intermediate
 
-- [ ] Test asynchronous code with `async/await`, `resolves`, and `rejects`
+- [x] Test asynchronous code with `async/await`, `resolves`, and `rejects`
 - [ ] Mock functions and modules using `jest.fn()` and `jest.mock()`
 - [ ] Use setup and teardown hooks: `beforeEach`, `afterEach`, `beforeAll`, `afterAll`
 - [ ] Organize test files and improve coverage with targeted cases
